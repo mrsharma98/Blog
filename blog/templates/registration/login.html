@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+
+<div class="jumbotron">
+  <h2>Please Login:</h2>
+  <h3>(Must be SuperUser, please check with the site admin)</h3>
+
+  {% if form.errors %}
+  <!-- This will assure that the particular
+       user have been logged in that matches
+       the username and password in our database.-->
+    <p>Your username and password didn't match! Please try again.</p>
+  {% endif %}
+
+  <form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" name="btn btn-primary" value="Login">
+    <input type="hidden" name="next" value="{{next}}">
+    <!--
+    Basically the login view in the urls.py will supply us the
+    next variable which will allow what to do next after the
+    person has been logged in.
+  -->
+  </form>
+
+
+</div>
+
+{% endblock %}
