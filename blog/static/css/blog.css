@@ -1,5 +1,5 @@
 .techfont{
-  font-family: 'Russo One', sans-sans-serif;
+  font-family: 'Russo One', sans-serif;
   font-size: 1.5em;
   margin-bottom: 10px;
 }
@@ -12,7 +12,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-
+/*
 .postdate{
   text-align: center;
 }
@@ -31,14 +31,14 @@
 .btn-comment{
   position: absolute;
   right: 0px;
-}
+} */
 
 /* The below code is for preloader */
 
 .loader{
   filter: hue-rotate(0deg);
   color: linear-gradient(45deg,#0f8,#0f8);
-  animation: hue 10000ms infinite kinear;
+  animation: hue 10000ms infinite linear;
 }
 
 @keyframes spinify{
@@ -49,6 +49,7 @@
     transform: translate(0px,24px);
     border-radius: 100px;
     width: 10px;
+    height: 10px;
   }
   66% {
     transform: translate(0px,-16px);

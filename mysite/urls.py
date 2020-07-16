@@ -28,6 +28,6 @@ urlpatterns = [
     # path('accounts/logout/$', views.LogoutView.as_view(), name='logout', kwargs={'next_page':'/'}),
     url(r'accounts/login/$', views.login, name='login'),
     url(r'accounts/logout/$', views.logout, name='logout', kwargs={'next_page':'/'}),
-    # it means when you logout you will be redirected to home page. 
+    # it means when you logout you will be redirected to home page.
 
 ]
