@@ -10,7 +10,7 @@
   <a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
 {% endif %}
 
-<p class="postcontent">{{ post.title|safe|linebreaksbr }}</p>
+<p class="postcontent">{{ post.text|safe|linebreaksbr }}</p>
 <!-- basically safe applies the bold tag to the content means safe = <b></b>
      linkbreaksbr is probably going to add line breaks linebreaksbr = <br/> -->
 
@@ -30,7 +30,7 @@
   {% for comment in post.comments.all %}
     <br>
     {% if user.is_authenticated or comment.approved_comment %}
-      {{ comment.created_date }}
+      {{ comment.create_date }}
       {% if not comment.approved_comment %}
         <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}">
           <span class="glyphicon glyphicon-remove"></span>
@@ -39,8 +39,9 @@
           <span class="glyphicon glyphicon-ok"></span>
         </a>
       {% endif %}
+      <hr>
       <p>{{ comment.text|safe|linebreaks }}</p>
-      <p>Posted By: {{ comment.author }}</p>
+      <p>Posted By: <b>{{ comment.author }}</b></p>
 
     {% endif %}
     {% empty %}

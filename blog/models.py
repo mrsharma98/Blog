@@ -11,7 +11,7 @@ class Post(models.Model):
     # conneting author to the authorized user or superuser on the website.
     title = models.CharField(max_length=200)
     text = models.TextField()
-    create_date = models.DateTimeField(default=timezone.now())
+    created_date = models.DateTimeField(default=timezone.now())
     published_date = models.DateTimeField(blank=True, null=True)
 
     # if the user published his/her post.

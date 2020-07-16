@@ -12,7 +12,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-/*
+
 .postdate{
   text-align: center;
 }
@@ -31,9 +31,10 @@
 .btn-comment{
   position: absolute;
   right: 0px;
-} */
+}
 
 /* The below code is for preloader */
+/* Color changer */
 
 .loader{
   filter: hue-rotate(0deg);
